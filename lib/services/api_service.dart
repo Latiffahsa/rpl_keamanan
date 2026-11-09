@@ -1,10 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:http/http.dart' as http;
+
 import '../config/app_config.dart';
 import '../models/user.dart';
 import '../models/post.dart';
+import '../utils/logger.dart';
+
 class ApiService {
   final http.Client _client;
   final String _baseUrl;
@@ -90,12 +94,12 @@ class ApiService {
   }
 
   void _logRequest(String method, String endpoint) {
-    print('[$method] $endpoint');
+    Logger.debug('[$method] $endpoint');
   }
 
   /// Logging response yang aman (hanya status code).
   void _logResponse(int statusCode) {
-    print('Response status: $statusCode');
+    Logger.debug('Response status: $statusCode');
   }
 
   /// Menutup client.

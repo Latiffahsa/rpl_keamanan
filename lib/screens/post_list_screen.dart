@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+
 import '../models/post.dart';
 import '../repositories/post_repository.dart';
 import '../repositories/post_repository_impl.dart';
+import '../config/dependency_injector.dart';
+
 class PostListScreen extends StatefulWidget {
   final PostRepository? repository;
 
@@ -18,7 +21,8 @@ class _PostListScreenState extends State<PostListScreen> {
   @override
   void initState() {
     super.initState();
-    _repository = widget.repository ?? PostRepositoryImpl();
+    _repository =
+        widget.repository ?? DependencyProvider.of(context).postRepository;
     _future = _repository.getPosts();
   }
 

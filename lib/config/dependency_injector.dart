@@ -5,6 +5,7 @@ import '../repositories/post_repository_impl.dart';
 import '../repositories/user_repository.dart';
 import '../repositories/user_repository_impl.dart';
 import '../services/api_service.dart';
+
 class DependencyInjector {
   DependencyInjector._internal();
 

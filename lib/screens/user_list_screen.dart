@@ -4,6 +4,7 @@ import '../models/user.dart';
 import '../repositories/user_repository.dart';
 import '../repositories/user_repository_impl.dart';
 import '../widgets/user_card.dart';
+import '../config/dependency_injector.dart';
 
 class UserListScreen extends StatefulWidget {
   final UserRepository? repository;
@@ -20,7 +21,9 @@ class _UserListScreenState extends State<UserListScreen> {
   @override
   void initState() {
     super.initState();
-    _repository = widget.repository ?? UserRepositoryImpl();
+    _repository =
+        widget.repository ??
+        DependencyProvider.of(context).userRepository; //ini yg diubah
     _loadUsers();
   }
 

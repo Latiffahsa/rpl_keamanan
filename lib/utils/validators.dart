@@ -24,8 +24,6 @@ class Validators {
   }
 
   /// Memvalidasi dan membersihkan input teks.
-  ///
-  /// Mengembalikan pesan error jika tidak valid, atau `null` jika valid.
   static String? validateText(
     String? value, {
     String fieldName = 'Field',
@@ -52,11 +50,8 @@ class Validators {
     return null;
   }
 
-  // ===================== LATIHAN 3 (BARU) =====================
-
+  // LATIHAN 3 (BARU)
   /// Memvalidasi nomor telepon: hanya angka, 10-13 digit.
-  ///
-  /// Mengembalikan pesan error jika tidak valid, atau `null` jika valid.
   static String? validatePhone(String? value) {
     if (value == null || value.trim().isEmpty) {
       return 'Nomor telepon tidak boleh kosong';
@@ -66,10 +61,7 @@ class Validators {
     }
     return null;
   }
-
   /// Memvalidasi URL: harus diawali `http://` atau `https://`.
-  ///
-  /// Mengembalikan pesan error jika tidak valid, atau `null` jika valid.
   static String? validateUrl(String? value) {
     if (value == null || value.trim().isEmpty) {
       return 'URL tidak boleh kosong';
@@ -79,11 +71,7 @@ class Validators {
     }
     return null;
   }
-
   /// Memvalidasi password: minimal 8 karakter, mengandung huruf kapital,
-  /// angka, dan simbol.
-  ///
-  /// Mengembalikan pesan error jika tidak valid, atau `null` jika valid.
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password tidak boleh kosong';
